@@ -10,13 +10,44 @@ void menu()
 }
 void game()  //生成棋盘
 {
-	char board [ROW] [COL] = {0};//此时数组元素全为空，接下类进行初始化，将元素转化为空格
+	char board [ROW] [COL] = {'a','b','c','d','e'};//此时数组元素全为空，接下类进行初始化，将元素转化为空格
 	Initboard(board, ROW, COL);//初始化棋盘
 	Displayboard(board, ROW, COL);
-}
+	while (1)
+	{
+		//玩家下棋
+		playermove(board, ROW, COL);
+		Displayboard(board, ROW, COL);
+		//输赢判断
+		if (win_judge(board, ROW, COL) == '*')
+		{
+			printf("\n——》你赢了《——\n\n");
+				break;
+		}
+		if (win_judge(board, ROW, COL) == 'p')
+		{
+			printf("\n——》平局《——\n\n");
+			break;
+		}
+
+
+		//电脑下棋
+		computermove(board, ROW, COL);
+		Displayboard(board, ROW, COL);
+		win_judge(board, ROW, COL);
+		if (win_judge(board, ROW, COL) == '#')
+		{
+			printf("\n——》你输了《——\n\n");
+			break;
+		}
+
+
+	}
+}  
 
 void test()
 {
+
 	int input;
 	do
 	{
