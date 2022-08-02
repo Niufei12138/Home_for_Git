@@ -21,3 +21,4 @@ void display2(int board[ROWS][COLS], int row, int col);
 void get_count(int basic_mineboard[ROWS][COLS], int count_board[ROW][COL], int rows, int cols, int row, int col);
 
 void play(int basic_mineboard[ROWS][COLS], int count_board[ROW][COL], int display_board[ROW][COL],int rows, int cols, int row, int col);
+void open_empty(int display_board[ROW][COL], int count_board[ROW][COL], int i, int j, int* count_0);

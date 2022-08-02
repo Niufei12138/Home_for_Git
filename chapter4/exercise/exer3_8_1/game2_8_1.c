@@ -124,7 +124,7 @@ void play(int basic_mineboard[ROWS][COLS], int count_board[ROW][COL], int displa
 				}
 				else
 				{
-					display_board[i][j] = count_board[i][j];
+					open_empty(display_board, count_board, i, j, &count_0);
 					count_0++;
 					//printf("%d", display_board[i][j]);
 					printf("\n");
@@ -149,6 +149,54 @@ void play(int basic_mineboard[ROWS][COLS], int count_board[ROW][COL], int displa
 		}
 	}
 	
+}
+
+void open_empty(int display_board[ROW][COL], int count_board[ROW][COL], int i, int j, int* count_0)
+{
+	if (count_board[i][j] == 0)
+	{
+		int I, M;
+		int J, N;
+		int x, y;
+		I = i - 1; J = j - 1; M = i + 1; N = j + 1;
+		if (I < 0)
+		{
+			I = 0;
+		}
+		if (J < 0)
+		{
+			J = 0;
+		}
+		if (M>8)
+		{
+			M = 8;
+		}
+		if (N>8)
+		{
+			N = 8;
+		}
+
+		for (x = I; x <= M; x++)
+		{
+
+			for (y = J; y <= N; y++)
+			{
+
+				display_board[x][y] = count_board[x][y];
+				(*count_0)++;
+
+
+			}
+
+
+		}
+	}
+	else
+	{
+		display_board[i][j] = count_board[i][j];
+		(*count_0)++;
+	}
+
 }
 	
 
