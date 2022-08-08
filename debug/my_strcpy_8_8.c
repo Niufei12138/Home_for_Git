@@ -11,11 +11,41 @@
 //     arr1[i]=arr2[i];
 // }
 
-// 优化
+// 优化1
+// void my_strcpy(char* arr1,char* arr2)
+// {
+//     while(*arr1++=*arr2++)        //结构和逻辑语言优化
+//     {;}                           //但是遇到输入空指针会崩溃
+// }
+
+// 优化2
 void my_strcpy(char* arr1,char* arr2)
 {
-    while(*arr1++=*arr2++)
-    {;}
+    if(arr1!=NULL&&arr2!=NULL)
+    {
+        while(*arr1++=*arr2++)      //遇到错误会掠过
+    {;}                             //但不会报错
+    }
+}
+
+//优化3___使用断言
+// #include<assert.h>
+// void my_strcpy(char* arr1,char* arr2)
+// {
+//     assert(arr1!=NULL);
+//     assert(arr2!=NULL);     //发现问题会报错
+//      while(*arr1++=*arr2++)     
+//     {;}    
+// }
+
+// 优化4__使用const固定被copy字符串
+#include<assert.h>
+void my_strcpy(char* arr1,const char* arr2)  //如果arr1和arr2弄反了，这里会报错
+{
+    assert(arr1!=NULL);
+    assert(arr2!=NULL);      
+     while(*arr1++=*arr2++)     
+    {;}    
 }
 int main()
 {
