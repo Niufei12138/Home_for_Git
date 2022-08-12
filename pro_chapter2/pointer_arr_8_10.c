@@ -27,6 +27,7 @@ int  main()
     int arr2[]={2,3,4,5,6};
     int arr3[]={3,4,5,6,7};
     int*parr[]={arr1,arr2,arr3};
+    int*p=&arr1[0];
     int i=0;
     for (i=0;i<3;i++)
     {
@@ -37,5 +38,6 @@ int  main()
         }
         printf("\n");
     }
+    printf("%d",p[2]);
     return 0;
 }
