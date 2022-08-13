@@ -23,26 +23,41 @@ int div(int a,int b)
 {
     return a/b;
 }
+void calc(int(*pf)(int,int))
+{
+    int x,y;
+    printf("请输入：\n");
+    scanf("%d%d",&x,&y);
+    printf("%d\n",pf(x,y));
+}
 int main()
 {
     int choose_num=0;
-    int(*arr[4])(int,int)={add,sub,mul,div};
-    int(*(*parr)[4])(int,int)=&arr;//指向函数指针数组的指针
     do
     {
     menu();
     printf("请输入需要的计算法则序号：\n");
     scanf("%d",&choose_num);
-    if(choose_num>0&&choose_num<5)
+    switch (choose_num)
     {
-        int num1,num2;
-        printf("请输入两个数的值：\n\n");
-        scanf("%d%d",&num1,&num2);
-        printf("结果为：%d\n",arr[choose_num-1](num1,num2));
-    }
-    else if(choose_num>=5)
-    {
-        printf("输入错误\n");
+    case 0:
+        printf("退出");
+        break;
+    case 1:
+        calc(&add);
+        break;
+    case 2:
+        calc(sub);
+        break;
+    case 3:
+        calc(mul);
+        break;
+    case 4:
+        calc(div);
+        break;
+    default:
+        printf("输入错误，请重新输入");
+        break;
     }
     } 
     while (choose_num);
