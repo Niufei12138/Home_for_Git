@@ -1,6 +1,7 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
+// 自己编写的qsort仿制函数，非常滴nice
 void my_qsort(void* base,int sz,int size,int (*cmp)(const void*,const void*))
 {
     int i,j;
