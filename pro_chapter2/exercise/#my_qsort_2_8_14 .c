@@ -1,13 +1,15 @@
-// void qsort 返回类型
-//      (void* base,  待处理的数据首地址
-//             size_t num,   数据元素数量
-//              size_t size,  单个数据元素大小
-//             int (*compar)(const void*,const void*));  取出数据使用的方法
+// 该版用char*作为传值类型，便于理解，在使用过程中也无需多次转换类型
+// 经过数组和结构体地的检验，可以正常使用
 #include<stdio.h>
-int cmp_int (const char* p1,const char*p2)//外置比较方法
-{
-    return (*(int*)p1-*(int*)p2 );
-}
+#include<stdlib.h>
+#include<string.h>
+
+struct stu
+    {
+        char name[10];
+        int age;
+    };
+
 void my_qsort(char* base,int sz,int size,int (*cmp)(const char*,const char*))
 {
     int i,j;
@@ -30,15 +32,19 @@ void my_qsort(char* base,int sz,int size,int (*cmp)(const char*,const char*))
         }
     }
 }
+int com_struct_name(const char*e1,const char*e2)
+{
+    return strcmp((((struct stu*)e1)->name),(((struct stu*)e2)->name));
+}
 int main()
 {
+    struct stu s[3]={{"zhangsan",15},{"lisi",25},{"wangwu",10}};
     int i;
-    int arr[]={5,8,2,3,4,7,9,1,61};
-    int sz=sizeof(arr)/sizeof(arr[0]);
-    my_qsort((char*)arr,sz,sizeof(arr[0]),cmp_int);
+    int sz=sizeof(s)/sizeof(s[0]);
+    my_qsort((char*)s,sz,sizeof(s[0]),com_struct_name);
     for(i=0;i<sz;i++)
     {
-        printf("%d ",arr[i]);
+        printf("%s  ",s[i].name);
     }
     printf("\n");
     return 0;

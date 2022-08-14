@@ -1,6 +1,29 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
+void my_qsort(void* base,int sz,int size,int (*cmp)(const void*,const void*))
+{
+    int i,j;
+    printf("调用了");
+    for (i=0;i<sz-1;i++)//比较遍数
+    {
+        for(j=0;j<sz-1-i;j++) //比较元素
+        {
+            if(cmp((char*)base+j*size,(char*)base+(j+1)*size)>0)//强制类型转换，使其能够进行加减操作，注意：void*类型地址无法加减
+            {
+                // 交换元素
+                int x;
+                for(x=0;x<size;x++)
+                {
+                    char a;
+                    a=*((char*)base+j*size+x);
+                    *((char*)base+j*size+x)=*((char*)base+(j+1)*size+x);
+                    *((char*)base+(j+1)*size+x)=a;
+                }
+            }
+        }
+    }
+}
 struct stu
     {
         char name[10];
@@ -74,7 +97,7 @@ void test4()
     struct stu s[3]={{"zhangsan",15},{"lisi",25},{"wangwu",10}};
     int i;
     int sz=sizeof(s)/sizeof(s[0]);
-    qsort(s,sz,sizeof(s[0]),com_struct_name);
+    my_qsort(s,sz,sizeof(s[0]),com_struct_name);
     for(i=0;i<sz;i++)
     {
         printf("%s  ",s[i].name);
