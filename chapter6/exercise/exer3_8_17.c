@@ -1,7 +1,9 @@
 // 编写函数逆序字符串
 #include<stdio.h>
-void oppose(char* p)
+#include<assert.h>
+void oppose( char* p)
 {
+    assert(p!=NULL);//断言：要求p不能为空指针
     int len=0;
     int i;
     char tem;
@@ -9,7 +11,7 @@ void oppose(char* p)
     {
         len++;
     }
-    printf("%d\n",len);
+    // printf("%d\n",len);
     for(i=0;i<len/2;i++)
     {
         tem =*(p+i);
@@ -20,7 +22,7 @@ void oppose(char* p)
 }
 int main()
 {
-    char arr[]="abcdef";
+    char arr[]="I'm iron man!";
     oppose(arr);
     printf("%s ",arr);
     return 0;
