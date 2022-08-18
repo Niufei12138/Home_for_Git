@@ -1,9 +1,10 @@
 // 打印1~10000之间的子幂数（水仙花数）
 #include<stdio.h>
+#include<math.h>
 int main()
 {
     int i,tem;
-    for(i=153;i<=10000;i++)
+    for(i=0;i<=100000;i++)
     {
         int m=0;
         int weishu=0;
@@ -17,7 +18,7 @@ int main()
         tem=i;
         while(tem!=0)
         {
-            m=m+((tem%10)^weishu);
+            m=m+pow((tem%10),weishu);
             tem/=10;
         }
         if(m==i)
