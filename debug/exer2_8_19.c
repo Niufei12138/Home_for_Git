@@ -39,6 +39,7 @@ void left_move(char arr[],int k)
 {
     assert(arr);
     int len=strlen(arr);
+    assert(k<len);
     reverse(arr,arr+k-1);
     reverse(arr+k,arr+len-1);
     reverse(arr,arr+len-1);
