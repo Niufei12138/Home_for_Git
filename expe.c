@@ -1,13 +1,14 @@
 #include <stdio.h>
 #include <math.h>
+#include<string.h>
 int main()
 {
-    // int a,b,result;
-    // scanf("%d%d",&a,&b);
-    // result = pow(a,b);//计算a的b次方
-    // printf("result = %d",result);
-    int a=pow(5,0.3);
-    printf("%3d",5);
-    printf("%4s","abc");
+    char arr1[10]="abcde";
+    char arr2[10]="abcdqqq";
+    // const char *p1="abcde";
+    // const char *p2="abcdqqq";
+    // strncpy(arr1,arr2,2);
+    int ret=strncmp(arr1,arr2,4);
+    printf("%d",ret);
     return 0;
 }
