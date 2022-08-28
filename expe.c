@@ -1,13 +1,27 @@
 #include <stdio.h>
-#include <math.h>
-#include<string.h>
+
+struct S1{
+    char c1;
+    int i;
+    char c2;
+    };
+    //练习2
+struct S2
+    {
+    char c1;
+    char c2;
+    int i;
+    };
+struct S3
+    {
+    double d;
+    char c;
+    int i;
+    };
 int main()
 {
-    char arr1[10]="acd@ef.id?真好啊*不然呢";
-    char arr2[3]="@.?*";
-    char* p=strtok(arr1,arr2);
-    p=strtok(NULL,arr2);
-    // p=strtok(arr1,arr2);
-    printf("%s",p);
+    struct S1 x={'!',16,'0'};
+    printf("%d\n", sizeof(struct S1));
+    printf("%d\n", sizeof(struct S2));
     return 0;
 }
