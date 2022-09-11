@@ -1,27 +1,18 @@
-#include <stdio.h>
-
-struct S1{
-    char c1;
-    int i;
-    char c2;
-    };
-    //练习2
-struct S2
-    {
-    char c1;
-    char c2;
-    int i;
-    };
-struct S3
-    {
-    double d;
-    char c;
-    int i;
-    };
+#include<stdio.h>
+union Un1
+{
+char c[5];
+int i;
+};
+union Un2
+{
+short c[7];
+int i;
+};
 int main()
 {
-    struct S1 x={'!',16,'0'};
-    printf("%d\n", sizeof(struct S1));
-    printf("%d\n", sizeof(struct S2));
-    return 0;
+
+printf("%d\n", sizeof(union Un1));
+printf("%d\n", sizeof(union Un2));
 }
+//下面输出的结果是什么？
