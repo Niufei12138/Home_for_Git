@@ -1,18 +1,19 @@
 #include<stdio.h>
-union Un1
-{
-char c[5];
-int i;
-};
-union Un2
-{
-short c[7];
-int i;
-};
 int main()
 {
-
-printf("%d\n", sizeof(union Un1));
-printf("%d\n", sizeof(union Un2));
+    int a=2;
+    int b=3;
+    if(a==b)
+    {
+        printf("1");
+    }
+    else if(a>b)
+    {
+        printf("2");
+    }
+    else if(a<b)
+    {
+        printf("3");
+    }
+    return 0;
 }
-//下面输出的结果是什么？
