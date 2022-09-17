@@ -1,19 +1,18 @@
 #include<stdio.h>
+
+char *GetMemory(void)
+{
+    char p[] = "hello world";
+    return p;
+}
+void Test(void)
+{
+char *str = NULL;
+str = GetMemory();
+printf(str);
+}
 int main()
 {
-    int a=2;
-    int b=3;
-    if(a==b)
-    {
-        printf("1");
-    }
-    else if(a>b)
-    {
-        printf("2");
-    }
-    else if(a<b)
-    {
-        printf("3");
-    }
+    Test();
     return 0;
 }
