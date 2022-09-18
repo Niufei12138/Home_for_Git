@@ -1,0 +1,16 @@
+﻿生成启动时间为 2022/9/18 19:48:37。
+     1>项目“G:\VScode_workplace\new_file\tongxunlu2_9_18.c\tongxunlu2_9_18.c\tongxunlu2_9_18.c.vcxproj”在节点 2 上(Build 个目标)。
+     1>ClCompile:
+         F:\VScode2013\install place\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TC /analyze- /errorReport:prompt test.c
+         test.c
+     1>g:\vscode_workplace\new_file\tongxunlu2_9_18.c\tongxunlu2_9_18.c\contact.h(6): warning C4005: “max”: 宏重定义
+                 f:\vscode2013\install place\vc\include\stdlib.h(921) : 参见“max”的前一个定义
+       Link:
+         F:\VScode2013\install place\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"G:\VScode_workplace\new_file\tongxunlu2_9_18.c\Debug\tongxunlu2_9_18.c.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"G:\VScode_workplace\new_file\tongxunlu2_9_18.c\Debug\tongxunlu2_9_18.c.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"G:\VScode_workplace\new_file\tongxunlu2_9_18.c\Debug\tongxunlu2_9_18.c.lib" /MACHINE:X86 Debug\contact.obj
+         Debug\test.obj
+         tongxunlu2_9_18.c.vcxproj -> G:\VScode_workplace\new_file\tongxunlu2_9_18.c\Debug\tongxunlu2_9_18.c.exe
+     1>已完成生成项目“G:\VScode_workplace\new_file\tongxunlu2_9_18.c\tongxunlu2_9_18.c\tongxunlu2_9_18.c.vcxproj”(Build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:00.81
