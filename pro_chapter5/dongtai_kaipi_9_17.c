@@ -1,5 +1,6 @@
 #include<stdlib.h>
 #include<stdio.h>
+#include<malloc.h>
 struct s
 {
     int a;
@@ -12,7 +13,7 @@ int main()
     if(ps!=NULL)
     {
         ps->a=100;
-        ps->arr=(int *)malloc(sizeof(5*sizeof(int)));
+        ps->arr=(int *)malloc(5*sizeof(int));
     }
     int i;
     for(i=0;i<5;i++)
@@ -21,7 +22,8 @@ int main()
         printf("%d ",ps->arr[i]);
     }
     //更改空间大小
-    int *ptr=(int *)realloc(ps->arr,10*sizeof(int));
+    int *ptr=NULL;
+    ptr=realloc(ps->arr,10*sizeof(int));
     if(ptr!=NULL)
     {
         ps->arr=ptr;
